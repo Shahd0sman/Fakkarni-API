@@ -1,4 +1,3 @@
-require("dotenv").config();
 const jwt = require("jsonwebtoken");
 const dataSource = require("../database/data-source");
 const User = require("../entities/user.entity");
