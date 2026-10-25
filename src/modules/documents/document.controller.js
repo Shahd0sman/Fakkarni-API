@@ -23,19 +23,29 @@ async function getMyDocuments(req, res) {
   const documents = await documentService.getMyDocuments(req.user.id);
 
   res.status(200).json({
+    success: true,
     results: documents.length,
     data: documents,
   });
 }
 
 async function updateDocument(req, res) {
+  const updateData = {
+    ...req.body,
+  };
+
+  if (req.file) {
+    updateData.filePath = `uploads/documents/${req.file.filename}`;
+  }
+
   const document = await documentService.updateDocument(
     req.user.id,
     Number(req.params.id),
-    req.body,
+    updateData,
   );
 
   res.status(200).json({
+    success: true,
     message: "Document updated successfully",
     data: document,
   });
@@ -45,6 +55,7 @@ async function deleteDocument(req, res) {
   await documentService.deleteDocument(req.user.id, Number(req.params.id));
 
   res.status(200).json({
+    success: true,
     message: "Document deleted successfully",
   });
 }

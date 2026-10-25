@@ -1,6 +1,6 @@
 const bcrypt = require("bcrypt");
 const dataSource = require("../../database/data-source");
-const User = require("../../entities/User.entity");
+const User = require("../../entities/user.entity");
 const AppError = require("../../utils/AppError");
 
 const userRepository = dataSource.getRepository(User);

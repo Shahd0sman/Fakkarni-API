@@ -1,5 +1,5 @@
 const dataSource = require("../../database/data-source");
-const Notification = require("../../entities/Notification.entity");
+const Notification = require("../../entities/notification.entity");
 const AppError = require("../../utils/AppError");
 
 const notificationRepository = dataSource.getRepository(Notification);

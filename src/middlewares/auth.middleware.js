@@ -1,7 +1,7 @@
 require("dotenv").config();
 const jwt = require("jsonwebtoken");
 const dataSource = require("../database/data-source");
-const User = require("../entities/User.entity");
+const User = require("../entities/user.entity");
 const asyncHandler = require("../utils/asyncHandler");
 const AppError = require("../utils/AppError");
 

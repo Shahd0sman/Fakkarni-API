@@ -1,10 +1,10 @@
 require("dotenv").config();
 const { DataSource } = require("typeorm");
-const User = require("../entities/User.entity");
-const Document = require("../entities/Document.entity");
-const Bill = require("../entities/Bill.entity");
-const Reminder = require("../entities/Reminder.entity");
-const Notification = require("../entities/Notification.entity");
+const User = require("../entities/user.entity");
+const Document = require("../entities/document.entity");
+const Bill = require("../entities/bill.entity");
+const Reminder = require("../entities/reminder.entity");
+const Notification = require("../entities/notification.entity");
 
 const dataSource = new DataSource({
   type: "postgres",

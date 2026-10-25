@@ -1,5 +1,5 @@
 const dataSource = require("../../database/data-source");
-const Bill = require("../../entities/Bill.entity");
+const Bill = require("../../entities/bill.entity");
 const AppError = require("../../utils/AppError");
 
 const billRepository = dataSource.getRepository(Bill);

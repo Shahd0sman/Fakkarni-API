@@ -23,7 +23,11 @@ router
 
 router
   .route("/:id")
-  .patch(validate(updateDocumentSchema), documentController.updateDocument)
+  .patch(
+    upload.single("file"),
+    validate(updateDocumentSchema),
+    documentController.updateDocument,
+  )
   .delete(documentController.deleteDocument);
 
 module.exports = router;

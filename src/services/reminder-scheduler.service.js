@@ -2,8 +2,8 @@ const cron = require("node-cron");
 const { LessThanOrEqual } = require("typeorm");
 
 const dataSource = require("../database/data-source");
-const Reminder = require("../entities/Reminder.entity");
-const Notification = require("../entities/Notification.entity");
+const Reminder = require("../entities/reminder.entity");
+const Notification = require("../entities/notification.entity");
 
 function startReminderScheduler() {
   cron.schedule("0 0 * * *", async () => {

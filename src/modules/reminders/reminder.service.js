@@ -1,6 +1,6 @@
 const dataSource = require("../../database/data-source");
-const Reminder = require("../../entities/Reminder.entity");
-const Document = require("../../entities/Document.entity");
+const Reminder = require("../../entities/reminder.entity");
+const Document = require("../../entities/document.entity");
 const AppError = require("../../utils/AppError");
 
 const reminderRepository = dataSource.getRepository(Reminder);
