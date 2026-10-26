@@ -21,6 +21,7 @@
 // module.exports = dataSource;
 
 const { DataSource } = require("typeorm");
+const pg = require("pg");
 
 const User = require("../entities/user.entity");
 const Document = require("../entities/document.entity");
@@ -30,6 +31,7 @@ const Notification = require("../entities/notification.entity");
 
 const dataSource = new DataSource({
   type: "postgres",
+  driver:pg,
   url: process.env.DATABASE_URL,
   ssl: {
     rejectUnauthorized: true,
