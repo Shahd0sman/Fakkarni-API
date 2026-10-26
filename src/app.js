@@ -52,6 +52,20 @@ const app = express();
 app.use(security);
 app.use(cors);
 app.use(express.json());
+const dataSource = require("./database/data-source");
+
+app.use(async (req, res, next) => {
+  try {
+    if (!dataSource.isInitialized) {
+      await dataSource.initialize();
+    }
+    next();
+  } catch (err) {
+    console.error("Database connection error:", err);
+    next(err);
+  }
+});
+
 app.get("/", (req, res) => {
   res.json({ success: true, message: "Fakkarni API is running" });
 });
