@@ -52,7 +52,9 @@ const app = express();
 app.use(security);
 app.use(cors);
 app.use(express.json());
-
+app.get("/", (req, res) => {
+  res.json({ success: true, message: "Fakkarni API is running" });
+});
 app.use("/api/auth", authRoutes);
 app.use("/api/documents", documentRoutes);
 app.use("/api/bills", billRoutes);
